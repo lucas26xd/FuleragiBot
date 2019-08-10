@@ -1,0 +1,60 @@
+# Texto normal
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'text': 'oi'}
+dict_keys(['message_id', 'from', 'chat', 'date', 'text'])
+
+# Botão de comando
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'text': '/hora', 'entities': [{'offset': 0, 'length': 5, 'type': 'bot_command'}]}
+dict_keys(['message_id', 'from', 'chat', 'date', 'text', 'entities'])
+
+# Emoji
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'text': '😁'}
+dict_keys(['message_id', 'from', 'chat', 'date', 'text'])
+
+# Sticker
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'sticker': {'width': 512, 'height': 512, 'emoji': '👍', 'set_name': 'AppleSteveJobs', 'thumb': {'file_id': 'AAQCABND7KwOAAS6P4ymthhwDM4jAAIC', 'file_size': 6816, 'width': 128, 'height': 128}, 'file_id': 'CAADAgADKQcAAmMr4gnhM9ccDb2hKAI', 'file_size': 46226}}
+dict_keys(['message_id', 'from', 'chat', 'date', 'sticker'])
+
+# Mensagem de áudio
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'voice': {'duration': 2, 'mime_type': 'audio/ogg', 'file_id': 'AwADAQADggADRJloRbEWPtLDOEi4Ag', 'file_size': 14913}}
+dict_keys(['message_id', 'from', 'chat', 'date', 'voice'])
+
+# Foto
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'photo': [{'file_id': 'AgADAQADOqgxG3ucaEVLt3-XZfOMFBR3DDAABPuWJvpSRx-S4YoFAAEC', 'file_size': 1528, 'width': 90, 'height': 45}, {'file_id': 'AgADAQADOqgxG3ucaEVLt3-XZfOMFBR3DDAABBMf9HZ2jw0744oFAAEC', 'file_size': 14402, 'width': 320, 'height': 161}, {'file_id': 'AgADAQADOqgxG3ucaEVLt3-XZfOMFBR3DDAABOX4yImED32m4ooFAAEC', 'file_size': 21863, 'width': 450, 'height': 226}]}
+dict_keys(['message_id', 'from', 'chat', 'date', 'photo'])
+
+# Documento
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'document': {'file_name': 'pythonoo.pdf', 'mime_type': 'application/pdf', 'file_id': 'BQADAQADUwADL99oRSTaKoasZOpFAg', 'file_size': 701450}}
+dict_keys(['message_id', 'from', 'chat', 'date', 'document'])
+
+# Vídeo
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'video': {'duration': 224, 'width': 640, 'height': 480, 'mime_type': 'video/mp4', 'thumb': {'file_id': 'AAQBABN1jmsGAAQ8GSIORXAi52xYAAIC', 'file_size': 12396, 'width': 320, 'height': 240}, 'file_id': 'BAADAQADVAADL99oRZUICgsKcRbFAg', 'file_size': 9930019}}
+dict_keys(['message_id', 'from', 'chat', 'date', 'video'])
+
+# URL
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'text': 'http://servicos.cptec.inpe.br/XML/cidade/7dias/-4.408954/-40.400083/previsaoLatLon.xml', 'entities': [{'offset': 0, 'length': 86, 'type': 'url'}]}
+dict_keys(['message_id', 'from', 'chat', 'date', 'text', 'entities'])
+
+# Áudio
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'audio': {'duration': 227, 'mime_type': 'audio/mpeg', 'file_id': 'CQADAQADVQADL99oRWS81nH7jprsAg', 'file_size': 5453877}}
+dict_keys(['message_id', 'from', 'chat', 'date', 'audio'])
+
+# Contato
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'contact': {'phone_number': '---', 'first_name': '---', 'vcard': '---', 'user_id': ---}}
+dict_keys(['message_id', 'from', 'chat', 'date', 'contact'])
+
+# Localização
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'location': {'latitude': ---, 'longitude': ---}}
+dict_keys(['message_id', 'from', 'chat', 'date', 'location'])
+
+# Respondendo outra mensagem
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'reply_to_message': {'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'audio': {'duration': 227, 'mime_type': 'audio/mpeg', 'file_id': 'CQADAQADVQADL99oRWS81nH7jprsAg', 'file_size': 5453877}}, 'text': 'música boa'}
+dict_keys(['message_id', 'from', 'chat', 'date', 'reply_to_message', 'text'])
+
+# Encaminhamento de mensagem
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'forward_from': {'id': ---, 'is_bot': False, 'first_name': '---', 'username': '---', 'language_code': 'pt-br'}, 'forward_date': ---, 'text': 'https://sites.google.com/site/professoradaojr/home/adao-souza-jr', 'entities': [{'offset': 0, 'length': 64, 'type': 'url'}]}
+dict_keys(['message_id', 'from', 'chat', 'date', 'forward_from', 'forward_date', 'text', 'entities'])
+
+# Editando mensagem
+{'message_id': ---, 'from': {'id': ---, 'is_bot': False, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'language_code': 'pt-br'}, 'chat': {'id': ---, 'first_name': 'Lucas', 'last_name': 'Santos', 'username': 'Aidimin', 'type': 'private'}, 'date': ---, 'edit_date': ---, 'text': 'olá'}
+dict_keys(['message_id', 'from', 'chat', 'date', 'edit_date', 'text'])
+
