@@ -1,4 +1,6 @@
-from telepot import Bot
+from telepot import Bot, glance
+from telepot.loop import MessageLoop
+from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
 from emoji import emojize, demojize, emoji_count
 from time import sleep
 import Util, config
@@ -49,8 +51,6 @@ def Texto(chatid, nome, comando):
         bot.sendVoice(chatid, open(f'voz_{chatid}.mp3', 'rb'))
         from os import remove
         remove(f'voz_{chatid}.mp3')
-    elif 'teste' in comando:
-        bot.sendMessage(chatid, emojize('Tudo OK! :+1: :ok_hand: :wink:', use_aliases=True))
     elif '/clima' in comando:
         bot.sendMessage(chatid, Util.previsaoTempo(cidade=comando[6:]), parse_mode='Markdown')
     elif 'jokenpo' in comando:
@@ -65,23 +65,15 @@ def Texto(chatid, nome, comando):
             bot.sendMessage(chatid, 'Ok!')
         else:
             bot.sendMessage(chatid, 'Você não está jogando!')
-    elif '/video' in comando:
+    elif '/video' in comando or '/baixar' in comando:
         bot.sendMessage(chatid, emojize('Aguarde um instante enquanto realizo a busca... :hourglass:', use_aliases=True))
         resultado = Util.pesquisa(comando[6:], 'youtube')
         bot.sendMessage(chatid, 'Segue abaixo alguns vídeos relacionado à pequisa:')
         for i, res in enumerate(resultado):
-            bot.sendMessage(chatid, emojize(f'/baixar{i+1} :arrow_forward: {res}', use_aliases=True))
-    elif '/baixar' in comando:
-        bot.sendMessage(chatid, emojize('Aguarde um instante... :hourglass:', use_aliases=True))
-        Util.baixarMP3(resultado[int(comando[comando.find('r')+1])-1])  # pega o número do índice do vetor para pegar a url que se deseja baixar
-        bot.sendMessage(chatid, emojize('Sua música já está sendo enviada... :headphones:', use_aliases=True))
-        bot.sendChatAction(chatid, 'upload_audio')
-        arq = Util.pegaMP3()
-        bot.sendAudio(chatid, open(arq, 'rb'), title=arq[:len(arq)-16])  # manda a música com apenas seu nome original sem url
-        sleep(0.5)
-        from os import remove
-        remove(arq)
-        return f'Baixar {arq[:len(arq)-16]}'  # Retorna nome do áudio baixado para o log
+            markup = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text=emojize(':point_up: Baixar este MP3 :arrow_down:', use_aliases=True), callback_data=i)]])  # Botão com o índice do vídeo a ser baixado
+            bot.sendMessage(chatid, emojize(res, use_aliases=True), reply_markup=markup)
+    elif 'teste' in comando:
+        bot.sendMessage(chatid, emojize('Tudo OK! :+1: :ok_hand: :wink:', use_aliases=True))
     else:
         if jogando:
             jogaJokenpo(chatid, comando)
@@ -90,7 +82,7 @@ def Texto(chatid, nome, comando):
     return comando
 
 
-def recebendoMsg(msg):
+def onChatMessage(msg):
     nome = chatid = comando = ''
     try:
         # print(msg)
@@ -145,7 +137,23 @@ def recebendoMsg(msg):
         print(f'Nome: {nome:15} {comando}')
 
 
-bot.message_loop(recebendoMsg)
+def onCallbackQuery(msg):  # Função de ação do botão de baixar
+    queryID, chatid, queryData = glance(msg, flavor='callback_query')
+    bot.answerCallbackQuery(queryID, text='Seu arquivo MP3 está sendo preparado')
+    Util.baixarMP3(resultado[int(queryData)])
+    bot.sendMessage(chatid, emojize('Sua música já está sendo enviada... :headphones:', use_aliases=True))
+    bot.sendChatAction(chatid, 'upload_audio')
+    arq = Util.pegaMP3()
+    bot.sendAudio(chatid, open(arq, 'rb'), title=arq[:len(arq) - 16])  # manda a música com apenas seu nome original sem url
+    sleep(5)
+    from os import remove
+    remove(arq)
+    print(f'Baixar {arq[:len(arq) - 16]}')  # Nome do áudio baixado para o log
+
+
+MessageLoop(bot, {'chat': onChatMessage, 'callback_query': onCallbackQuery}).run_as_thread()
+print(bot.getMe())
+print('Escutando ...')
 
 while True:
     pass

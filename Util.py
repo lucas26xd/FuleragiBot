@@ -96,11 +96,11 @@ def previsaoTempo(cidade=None, lat=None, lng=None):
     text = f'\n:high_brightness: Previsão do tempo para *{root[0].text} - {root[1].text}*:'
     text += ('\n:repeat: (Atualizado em *{0}*)'.format(datetime.strptime(root[2].text, '%Y-%m-%d').strftime('%d/%m/%Y')))
     for i in range(len(dias)):
-        text += f'\n\n:arrow_forward: Dia *{dias[i]}*:'
+        text += f'\n\n:sunrise_over_mountains: Dia *{dias[i]}*:'
         text += f'\n:small_blue_diamond: Clima: *{TEMPO[clima[i]]}*'
-        text += f'\n:small_blue_diamond: Temperatura máxima: *{temperaturas[i][0]} °C*'
-        text += f'\n:small_blue_diamond: Temperatura mínima: *{temperaturas[i][1]} °C*'
-        text += f'\n:small_blue_diamond: Índice UV: *{iuv[i]}*'
+        text += f'\n:small_red_triangle: Temperatura máxima: *{temperaturas[i][0]} °C*'
+        text += f'\n:small_red_triangle_down: Temperatura mínima: *{temperaturas[i][1]} °C*'
+        text += f'\n:small_orange_diamond: Índice UV: *{iuv[i]}*'
     return emojize(text, use_aliases=True)
 
 
